@@ -1,0 +1,215 @@
+body {
+	font-size:14px;
+	color:#382400;
+	font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+	line-height:1.6;
+	background: #f6f6f4;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+#contents {
+	position:relative;
+	overflow:hidden;
+	width:1000px;
+	margin:0 auto;
+	background:#fbfbfb;
+}
+@media screen and (min-width:768px) {
+	#contents:before {
+		position:absolute;
+		top:0;
+		right:0;
+		width:25%;
+		height:100%;
+		content: '';
+        background: #ededed;
+        z-index: 0;
+	}
+}
+
+#main {
+	box-sizing: border-box;
+	float:left;
+	width:75%;
+	padding:10px;
+}
+
+#sub {
+    position: relative;
+	box-sizing: border-box;
+	float:right;
+    width:25%;
+    z-index: 999;
+}
+
+#sub header {
+    background: #15adb3;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.summary {
+	margin:0;
+	padding:10px;
+	color:#000;
+}
+
+.nav-area {
+    position: relative;
+}
+
+.nav-checkbox {
+    display: none;
+}
+
+.nav-icon {
+    cursor: pointer;
+    display: block;
+    width: 56px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+}
+
+.nav-icon span,
+.nav-icon span:before,
+.nav-icon span:after {
+    background-color: #000;
+    display: block;
+    width: 26px;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    content: " ";
+}
+
+.nav-icon span:before {
+    top: 16px;
+}
+
+.nav-icon span:after {
+    top: -16px;
+}
+
+.nav-overlay {
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.nav-menu {
+    background: #ffffff;
+    color: #000;
+    max-width: 100%;
+    width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0;
+    right: -320px;
+}
+
+.nav-icon {
+    z-index: 4;
+}
+
+.nav-menu {
+    z-index: 3;
+}
+
+.nav-overlay {
+    z-index: 2;
+}
+
+.nav-checkbox:checked~.nav-icon span {
+    background: transparent;
+}
+
+.nav-checkbox:checked~.nav-icon span:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.nav-checkbox:checked~.nav-icon span:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-checkbox:checked~.nav-overlay {
+    opacity: 0.3;
+    pointer-events: auto;
+}
+
+.nav-checkbox:checked~.nav-menu {
+    right: 0;
+}
+
+.nav-icon span,
+.nav-icon span:after,
+.nav-icon span:before,
+.nav-overlay,
+.nav-menu {
+    -webkit-transition: all 0.7s;
+    transition: all 0.7s;
+}
+
+.nav-area select{
+    background:#20B2AA;
+    color:white;
+    width: 120px;
+    height:30px;
+    border:none;
+}
+
+/* スライダー */
+.tns-outer button {
+    display: none;
+}
+#tns1-mw {
+    margin: 0 30px;
+}
+.tns-item {
+    margin: 0 2px;
+    padding-bottom: 20px;
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -85px;
+    outline: none;
+}
+.controls li {
+    max-width: 27px;
+    outline: none;
+}
+.controls li img {
+    width: 100%;
+}
+.thumbnails li {
+    display: none;
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 980px;
+}
